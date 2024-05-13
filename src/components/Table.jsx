@@ -1,3 +1,5 @@
+import "./styling.css";
+
 const Table = ({ sat }) => {
   return (
     <table>
@@ -10,15 +12,13 @@ const Table = ({ sat }) => {
         </tr>
       </thead>
       <tbody>
-        {sat.map((id, data) => {
-          return<>
-          <tr key={id}>
-          <td>{sat[data].name}</td>
-          <td>{sat[data].type}</td>
-          <td>{sat[data].launchDate}</td>
-          <td>{(sat[data].operational) ? "Active": "Inactive"}</td>
+        {sat.map((data, index) => {
+          return<tr key={data.id}>
+            <td>{data.name}</td>
+            <td>{data.type}</td>
+            <td>{data.launchDate}</td>
+            <td>{(data.operational) ? "Active": "Inactive"}</td>
           </tr>
-          </>
         })}
       </tbody>
     </table>
